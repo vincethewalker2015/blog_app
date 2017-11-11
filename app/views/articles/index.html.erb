@@ -1,24 +1,33 @@
-<h1>Listing Articles</h1>
+  
+    <h1 class='well madeHeader'>All Articles</h1>
 
-<%= link_to 'New article', new_article_path %>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="2"></th>
-  </tr>
- 
-  <% @articles.each do |article| %>
+  <%= link_to 'Create New article', new_article_path, class: 'btn btn-success' %>
+  
+  <h5 class='hideIt'>44</h5>
+  
+  <div class="row">
+    <aside class ="col-md-8">
+      <table>
     <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'destroy', article_path(article),
-              method: :delete,
-              data: {confirm: 'Are you sure?'} %></td>
+      <th class='well wellTitle'>Title</th>
+      <th class='well wellTitle'>Text</th>
+     
     </tr>
-  <% end %>
-</table>
- 
+    
+    <% @articles.each do |article| %>
+     
+      <tr>
+        <td class='well well-sm wellFloor'><%= article.title %></td>
+        <td class='well well-sm wellFloor'><%= article.text %></td>
+        <td><p class='hideIt'>44</p></td>
+        <td><%= link_to 'Show', article_path(article), class: 'btn btn-info' %></td>
+        <td><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'destroy', article_path(article), class: 'btn btn-danger',
+                method: :delete,
+                data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+    <% end %>
+    </aside>
+    </div>
+  </table>
+   
